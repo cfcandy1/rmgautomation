@@ -33,7 +33,7 @@ public class loginWithInvalidCredentials {
     }
 
     @Test (priority = 1)
-    public static void invalidCredentials() {
+    public static void invalidCredentialsLogin() {
         // click login header button
         driver.findElement(By.xpath("//a[@class='link link-main-header']")).click();
         // enter username

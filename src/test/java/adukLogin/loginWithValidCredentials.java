@@ -35,7 +35,7 @@ public class loginWithValidCredentials {
 
     }
     @Test
-    public static void loginTest() {
+    public static void validCredentialsLogin() {
         // click login header button
         driver.findElement(By.xpath("//a[@class='link link-main-header']")).click();
         // enter username
