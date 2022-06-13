@@ -62,6 +62,7 @@ public class loginWithValidCredentials {
     public void tearDown(){
         // close browser
         driver.close();
+        driver.quit();
         }
     }
 
