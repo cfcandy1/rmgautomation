@@ -1,17 +1,20 @@
 package adukLogin;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import utility.Constant;
+
 import java.io.File;
 import java.time.Duration;
 
 
 public class loginWithValidCredentials {
-
     static WebDriver driver;
 
     @BeforeTest
@@ -19,8 +22,9 @@ public class loginWithValidCredentials {
         // set chrome driver property
         System.setProperty("webdriver.chrome.driver", "/Users/andrew/Downloads/Selenium/chromedriver");
         driver = new ChromeDriver();
+
         // get URL
-        driver.get("https://beta.admiralcasino.co.uk/en");
+        driver.get(Constant.adukURL);
         // set implicit wait
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
@@ -32,16 +36,15 @@ public class loginWithValidCredentials {
         // accept cookies
         driver.findElement(By.xpath("//button[@class='optanon-allow-all accept-cookies-button']")).click();
 
-
     }
     @Test
     public static void validCredentialsLogin() {
         // click login header button
         driver.findElement(By.xpath("//a[@class='link link-main-header']")).click();
         // enter username
-        driver.findElement(By.id("nickname")).sendKeys("livetestrmg50");
+        driver.findElement(By.id("nickname")).sendKeys("stagtestrmg1");
         // enter password
-        driver.findElement(By.id("password")).sendKeys("qwertz12345");
+        driver.findElement(By.id("password")).sendKeys("qwertz12strmg");
 
         // login button enabled
         Boolean nn = driver.findElement(By.xpath("//*[@id=\"dialog\"]/div/div[2]/div/app-login/form/div/button")).isEnabled();
