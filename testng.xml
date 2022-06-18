@@ -3,7 +3,7 @@
 <suite name="Suite 1">
     <test verbose="2" preserve-order="true" name="adukLogin">
         <classes>
-            <class name="adukLogin.loginWithInvalidCredentials"></class>
+            <class name="adukLogin.loginWithInvalidCredentials"/>
         </classes>
     </test>
 </suite>
