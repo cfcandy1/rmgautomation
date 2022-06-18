@@ -5,6 +5,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Test;
 import utility.Constant;
 import java.net.URL;
 
@@ -14,6 +16,7 @@ public class loginWithInvalidCredentials {
     public static final String AUTOMATE_ACCESS_KEY = "dBYL5U3ysZUsxEVnkCz7";
     public static final String URL = "https://" + AUTOMATE_USERNAME + ":" + AUTOMATE_ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
+    @Test
     public static void main(String[] args) throws Exception {
         String username = System.getenv("BROWSERSTACK_USERNAME");
         String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
@@ -60,7 +63,9 @@ public class loginWithInvalidCredentials {
         driver.quit();
 }
 
+
     // This method accepts the status, reason and WebDriver instance and marks the test on BrowserStack
+    @AfterTest
     public static void markTestStatus(String status, String reason, WebDriver driver) {
         final JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \""+ status + "\", \"reason\": \"" + reason + "\"}}");
