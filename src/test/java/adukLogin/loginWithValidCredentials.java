@@ -9,8 +9,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utility.Constant;
-
-import java.io.File;
 import java.time.Duration;
 
 
@@ -25,8 +23,6 @@ public class loginWithValidCredentials {
 
         // get URL
         driver.get(Constant.adukURL);
-        // set implicit wait
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         // basic auth login
         driver.findElement(By.id("user")).sendKeys("admin");
