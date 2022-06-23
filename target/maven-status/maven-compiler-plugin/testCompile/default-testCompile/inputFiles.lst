@@ -1,6 +1,2 @@
-/Users/andrew/eclipse-workspace/rmgautomation/src/test/java/browserstack/mainTestClass.java
-/Users/andrew/eclipse-workspace/rmgautomation/src/test/java/browserstack/TestClass1.java
-/Users/andrew/eclipse-workspace/rmgautomation/src/test/java/browserstack/TestClass2.java
-/Users/andrew/eclipse-workspace/rmgautomation/src/test/java/browserstack/TestClass3.java
 /Users/andrew/eclipse-workspace/rmgautomation/src/test/java/adukLogin/loginWithInvalidCredentials.java
 /Users/andrew/eclipse-workspace/rmgautomation/src/test/java/adukLogin/loginWithValidCredentials.java

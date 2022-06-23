@@ -15,15 +15,12 @@ public class loginWithInvalidCredentials {
     public static final String AUTOMATE_USERNAME = "aobrien_HrBoXL";
     public static final String AUTOMATE_ACCESS_KEY = "dBYL5U3ysZUsxEVnkCz7";
     public static final String URL = "https://" + AUTOMATE_USERNAME + ":" + AUTOMATE_ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    String username = System.getenv("BROWSERSTACK_USERNAME");
+    String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+    String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
 
     @Test
     public static void main(String[] args) throws Exception {
-        String username = System.getenv("BROWSERSTACK_USERNAME");
-        String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
-        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-        //String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
-        //String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
-
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browserName", "iphone");
         caps.setCapability("device", "iPhone 11");
@@ -63,9 +60,8 @@ public class loginWithInvalidCredentials {
         driver.quit();
 }
 
-
-    // This method accepts the status, reason and WebDriver instance and marks the test on BrowserStack
     @AfterTest
+    // This method accepts the status, reason and WebDriver instance and marks the test on BrowserStack
     public static void markTestStatus(String status, String reason, WebDriver driver) {
         final JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \""+ status + "\", \"reason\": \"" + reason + "\"}}");
